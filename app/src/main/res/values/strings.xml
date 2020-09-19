@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Sisionke Banking App</string>
+    <string name="txtEmailAddress">Email</string>
+    <string name="password">Password</string>
+    <string name="txtRegisterHere">Don\'t have an account? Register here</string>
+    <string name="RegisterHereTitle">Enter your details below to register</string>
+    <string name="Name">Name</string>
+    <string name="Surname">Surname</string>
+    <string name="Genderlabel">Gender</string>
+    <string name="GenderGroupMale">Male</string>
+    <string name="GenderGroupFemale">Female</string>
+    <string name="CreateAccount">Create Account</string>
+    <string name="txtLoginHere">Already have an account? Login Here</string>
+    <string name="generalLogoDescription">Company Logo</string>
+    <string name="sisonkeWelcomMessage">Welcome to Sisonke Bank App</string>
+    <string name="login">LOGIN</string>
+    <string name="Mobile">Moblie</string>
+    <string name="ViewAccountBalance">View Account Balance</string>
+    <string name="TransferBetweenAccounts">Transfer Between Accounts</string>
+    <string name="Logout">Logout</string>
+    <string name="ViewAccountBalanceTitle">View Account Balance</string>
+    <string name="AccountHolderName">Account Holder Name</string>
+    <string name="AccountHolderSurname">Account Holder Surname</string>
+    <string name="CurrentAccountBalance">Current Account Balance</string>
+    <string name="SavingsAccountBalance">Savings Account Balance</string>
+    <string name="CurrentBalance">"R "</string>
+    <string name="SavingsBalance">"R "</string>
+</resources>
