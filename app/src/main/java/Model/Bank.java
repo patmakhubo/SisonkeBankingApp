@@ -1,12 +1,12 @@
 package Model;
 
-public class Bank {
+abstract class Bank {
 
     private double CURRENT_BALANCE;
     private double SAVINGS_BALANCE;
 
     public Bank() {
-        this(0,0);
+        this(100, 100);
     }
 
     public Bank(double CURRENT_BALANCE, double SAVINGS_BALANCE) {

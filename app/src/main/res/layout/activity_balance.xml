@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:visibility="visible"
     tools:context=".AccountBalanceActivity">
 
 
     <TextView
-        android:id="@+id/lblViewAccountBalanceTitle"
+        android:id="@+id/txtTransferTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -23,21 +24,21 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
         android:text="@string/AccountHolderName"
-        app:layout_constraintBaseline_toBaselineOf="@+id/txtHolderName"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTransferTitle" />
 
     <TextView
-        android:id="@+id/txtHolderName"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.306"
+        android:text="@string/name"
         app:layout_constraintStart_toEndOf="@+id/lblAccountHolderName"
-        app:layout_constraintTop_toBottomOf="@+id/lblViewAccountBalanceTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTransferTitle" />
 
     <TextView
         android:id="@+id/lblAccountHolderSurname"
@@ -49,12 +50,13 @@
         app:layout_constraintTop_toBottomOf="@+id/lblAccountHolderName" />
 
     <TextView
-        android:id="@+id/txtHolderSurname"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="@string/surname"
         app:layout_constraintBaseline_toBaselineOf="@+id/lblAccountHolderSurname"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.224"
         app:layout_constraintStart_toEndOf="@+id/lblAccountHolderSurname" />
 
     <TextView
@@ -70,9 +72,9 @@
         android:id="@+id/txtCurrentBalance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         app:layout_constraintBaseline_toBaselineOf="@+id/lblCurrentAccountBalance"
-        app:layout_constraintEnd_toEndOf="@+id/txtHolderSurname"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/lblCurrentAccountBalance" />
 
     <TextView
@@ -88,9 +90,9 @@
         android:id="@+id/txtSavingsBalance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         app:layout_constraintBaseline_toBaselineOf="@+id/lblSavingsAccountBalance"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.22"
         app:layout_constraintStart_toEndOf="@+id/lblSavingsAccountBalance" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

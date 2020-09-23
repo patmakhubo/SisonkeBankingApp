@@ -30,7 +30,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:text="@string/sisonkeWelcomMessage"
-            android:textColor="@color/colorTheme"
+            android:textColor="@color/colorPrimary"
             android:textSize="25sp"
             tools:ignore="HardcodedText" />
 
@@ -63,14 +63,13 @@
             android:layout_below="@id/password"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:background="@color/colorTheme"
+            android:background="@color/colorPrimary"
             android:onClick="processLogin"
             android:text="@string/login"
             android:textColor="@android:color/background_light"
             tools:ignore="HardcodedText" />
 
         <TextView
-            android:id="@+id/txtRegisterHere"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/btnCreateAccount"

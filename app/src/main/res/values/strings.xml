@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">Sisionke Banking App</string>
+    <string name="app_name">Sisonke Banking App</string>
     <string name="txtEmailAddress">Email</string>
     <string name="password">Password</string>
     <string name="txtRegisterHere">Don\'t have an account? Register here</string>
     <string name="RegisterHereTitle">Enter your details below to register</string>
-    <string name="Name">Name</string>
-    <string name="Surname">Surname</string>
-    <string name="Genderlabel">Gender</string>
+    <string name="Name">Name: </string>
+    <string name="Surname">Surname: </string>
+    <string name="Genderlabel">Gender: </string>
     <string name="GenderGroupMale">Male</string>
     <string name="GenderGroupFemale">Female</string>
     <string name="CreateAccount">Create Account</string>
@@ -14,15 +14,27 @@
     <string name="generalLogoDescription">Company Logo</string>
     <string name="sisonkeWelcomMessage">Welcome to Sisonke Bank App</string>
     <string name="login">LOGIN</string>
-    <string name="Mobile">Moblie</string>
+    <string name="Mobile">Mobile; </string>
     <string name="ViewAccountBalance">View Account Balance</string>
     <string name="TransferBetweenAccounts">Transfer Between Accounts</string>
     <string name="Logout">Logout</string>
     <string name="ViewAccountBalanceTitle">View Account Balance</string>
-    <string name="AccountHolderName">Account Holder Name</string>
-    <string name="AccountHolderSurname">Account Holder Surname</string>
-    <string name="CurrentAccountBalance">Current Account Balance</string>
-    <string name="SavingsAccountBalance">Savings Account Balance</string>
-    <string name="CurrentBalance">"R "</string>
-    <string name="SavingsBalance">"R "</string>
+    <string name="AccountHolderName">Account Holder Name: </string>
+    <string name="AccountHolderSurname">Account Holder Surname: </string>
+    <string name="CurrentAccountBalance">Current Account Balance: </string>
+    <string name="SavingsAccountBalance">Savings Account Balance: </string>
+    <string name="TransferTitle">Transfer to/from Accounts: </string>
+    <string name="EnterTransferAmount">Enter Transfer Amount: </string>
+    <string name="TransferFrom">TransferFrom</string>
+    <string name="transfer">TRANSFER</string>
+    <string name="DecimalHints">00.00</string>
+    <string name="WelcomeMesssage">Welcome </string>
+    <string name="Currency">R </string>
+    <string name="name">name</string>
+    <string name="surname">surname</string>
+    <string name="NameValidator">^([A-Za-z]+)(\\s[A-Za-z]+)*\\s?$</string>
+    <string-array name="transferoptions">
+        <item>Current to Savings</item>
+        <item>Savings to Current</item>
+    </string-array>
 </resources>

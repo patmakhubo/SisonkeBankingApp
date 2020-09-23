@@ -10,26 +10,8 @@ public class User extends Bank{
     private String GENDER;
 //
 public User() {
-    this(-1,"","","","","","");
 }
-    public User(String NAME, String SURNAME,String EMAIL, String PASSWORD) {
-        this(-1,NAME,SURNAME,EMAIL,PASSWORD,"","");
-    }
 
-    public User(String NAME, String SURNAME, String EMAIL, String PASSWORD, String MOBILE, String GENDER) {
-        this(-1,NAME,SURNAME,EMAIL,PASSWORD,MOBILE,GENDER);
-    }
-
-    public User(int ID, String NAME, String SURNAME, String EMAIL, String PASSWORD, String MOBILE, String GENDER) {
-        super();
-        this.ID = ID;
-        this.NAME = NAME;
-        this.SURNAME = SURNAME;
-        this.EMAIL = EMAIL;
-        this.PASSWORD = PASSWORD;
-        this.MOBILE = MOBILE;
-        this.GENDER = GENDER;
-    }
 
     public int getID() {
         return ID;
@@ -86,18 +68,22 @@ public User() {
         this.GENDER = GENDER;
     }
 
-    public void setCURRENT_BALANCE(double CURRENT_BALANCE) {
-        super.setCURRENT_BALANCE(CURRENT_BALANCE);
-    }
-
+    @Override
     public double getCURRENT_BALANCE() {
         return super.getCURRENT_BALANCE();
     }
 
+    @Override
+    public void setCURRENT_BALANCE(double CURRENT_BALANCE) {
+        super.setCURRENT_BALANCE(CURRENT_BALANCE);
+    }
+
+    @Override
     public double getSAVINGS_BALANCE() {
         return super.getSAVINGS_BALANCE();
     }
 
+    @Override
     public void setSAVINGS_BALANCE(double SAVINGS_BALANCE) {
         super.setSAVINGS_BALANCE(SAVINGS_BALANCE);
     }

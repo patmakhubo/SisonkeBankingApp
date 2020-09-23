@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -17,9 +16,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:text="Welcome"
-            android:textColor="@color/colorTheme"
+            android:text="@string/WelcomeMesssage"
+            android:textColor="@color/colorPrimary"
             android:textSize="25sp" />
 
         <Button
@@ -28,19 +26,17 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/txtLoginWelcome"
             android:layout_marginTop="20dp"
-            android:background="@color/colorTheme"
-            android:onClick="viewAccountBalance"
+            android:background="@color/colorPrimary"
             android:text="@string/ViewAccountBalance"
             android:textColor="@android:color/background_light" />
 
         <Button
-            android:id="@+id/btnAccountTransfers"
+            android:id="@+id/btnAccountTransfer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/btnAccountBalance"
             android:layout_marginTop="20dp"
-            android:background="@color/colorTheme"
-            android:onClick="processtransfers"
+            android:background="@color/colorPrimary"
             android:text="@string/TransferBetweenAccounts"
             android:textColor="@android:color/background_light" />
 
@@ -48,10 +44,9 @@
             android:id="@+id/btnLogout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/btnAccountTransfers"
+            android:layout_below="@id/btnAccountTransfer"
             android:layout_marginTop="20dp"
-            android:background="@color/colorTheme"
-            android:onClick="processLogout"
+            android:background="@color/colorPrimary"
             android:text="@string/Logout"
             android:textColor="@android:color/background_light" />
     </RelativeLayout>

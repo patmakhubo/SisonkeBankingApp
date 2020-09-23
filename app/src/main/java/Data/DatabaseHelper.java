@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -45,6 +44,7 @@ public class DatabaseHelper extends SQLiteOpenHelper implements Utilities {
         Cursor cursor = db.rawQuery("SELECT * FROM "+USER_TABLE+" WHERE EMAIL='"+email+"'", null);
         boolean result = cursor.moveToFirst();
         cursor.close();
+        db.close();
         return result;
     }
 
@@ -60,49 +60,67 @@ public class DatabaseHelper extends SQLiteOpenHelper implements Utilities {
         values.put(GENDER, user.getGENDER());
         values.put(CURRENT_BALANCE, user.getCURRENT_BALANCE());
         values.put(SAVINGS_BALANCE, user.getSAVINGS_BALANCE());
-        db.insert(USER_TABLE,null,values);
+        db.insert(USER_TABLE, null, values);
         db.close();
     }
 
-    public User getUserDetails(String email)
-    {
+    public int updateBalance(User user) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(CURRENT_BALANCE, user.getCURRENT_BALANCE());
+        values.put(SAVINGS_BALANCE, user.getSAVINGS_BALANCE());
+        return db.update(USER_TABLE, values, EMAIL + "=?", new String[]{user.getEMAIL()});
+
+    }
+
+    public User getUserDetails(String email) {
         SQLiteDatabase db = this.getReadableDatabase();
         //SELECT
-        String[] columns = new String[]{FIRSTNAME,SURNAME,CURRENT_BALANCE,SAVINGS_BALANCE};
+        String[] columns = new String[]{FIRSTNAME, SURNAME, EMAIL, PASSWORD, CURRENT_BALANCE, SAVINGS_BALANCE};
         //WHERE clause
         String selection = EMAIL + "=?";
         //WHERE clause arguments
         String[] selectionArgs = {email};
-        Cursor c  = db.query(USER_TABLE, columns, selection, selectionArgs, null,null, null, null);
-        if(c != null)  c.moveToFirst();
+        Cursor c = db.query(USER_TABLE, columns, selection, selectionArgs, null, null, null, null);
         User user = new User();
-        user.setNAME(c.getString(0));
-        user.setSURNAME(c.getString(1));
-        user.setCURRENT_BALANCE(Double.parseDouble(c.getString(2)));
-        user.setSAVINGS_BALANCE(Double.parseDouble(c.getString(3)));
+        if (c != null && c.moveToFirst()) {
+            user.setNAME(c.getString(0));
+            user.setSURNAME(c.getString(1));
+            user.setEMAIL(c.getString(2));
+            user.setPASSWORD(c.getString(3));
+            user.setCURRENT_BALANCE(Double.parseDouble(c.getString(4)));
+            user.setSAVINGS_BALANCE(Double.parseDouble(c.getString(5)));
+        }
+        c.close();
+        db.close();
         return user;
+
 
     }//validate Logi
-    public User ValidateLogin(String un, String pwd)
-    {
+
+    public User ValidateLogin(String un, String pwd) {
         SQLiteDatabase db = this.getReadableDatabase();
         //SELECT
-        String[] columns = new String[]{FIRSTNAME,SURNAME,EMAIL,PASSWORD ,CURRENT_BALANCE,SAVINGS_BALANCE,ID};
+        String[] columns = new String[]{FIRSTNAME, SURNAME, EMAIL, PASSWORD, CURRENT_BALANCE, SAVINGS_BALANCE, ID};
         //WHERE clause
-        String selection = EMAIL + "=? OR " + PASSWORD + "=?";
+        String selection = EMAIL + "=? AND " + PASSWORD + "=?";
         //WHERE clause arguments
         String[] selectionArgs = {un, pwd};
-        Cursor c  = db.query(USER_TABLE, columns, selection, selectionArgs, null,null, null, null);
-        if(c != null)  c.moveToFirst();
-        User user = new User();
-        user.setNAME(c.getString(0));
-        user.setSURNAME(c.getString(1));
-        user.setEMAIL(c.getString(2));
-        user.setPASSWORD(c.getString(3));
-        user.setCURRENT_BALANCE(Double.parseDouble(c.getString(4)));
-        user.setSAVINGS_BALANCE(Double.parseDouble(c.getString(5)));
-        user.setID(Integer.parseInt(c.getString(6)));
-        return user;
+        Cursor c = db.query(USER_TABLE, columns, selection, selectionArgs, null, null, null, null);
 
+        User user = new User();
+        if (c != null && c.moveToFirst()) {
+            user.setNAME(c.getString(0));
+            user.setSURNAME(c.getString(1));
+            user.setEMAIL(c.getString(2));
+            user.setPASSWORD(c.getString(3));
+            user.setCURRENT_BALANCE(Double.parseDouble(c.getString(4)));
+            user.setSAVINGS_BALANCE(Double.parseDouble(c.getString(5)));
+            user.setID(Integer.parseInt(c.getString(6)));
+        }
+        c.close();
+        db.close();
+        return user;
     }//validate Login
 }
