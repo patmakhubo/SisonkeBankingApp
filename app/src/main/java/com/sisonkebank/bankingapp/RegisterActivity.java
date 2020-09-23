@@ -1,7 +1,5 @@
 package com.sisonkebank.bankingapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -9,6 +7,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.regex.Pattern;
 
@@ -108,7 +108,7 @@ public class RegisterActivity extends AppCompatActivity {
                     user.setCURRENT_BALANCE(3500.00);
                     db.addUser(user);
                     Toast.makeText(this,"You successfully created an account.", Toast.LENGTH_SHORT).show();
-                    Intent register = new Intent(this,MainPageActivity.class );
+                    Intent register = new Intent(this, LoginActivity.class);
                     startActivity(register);
                 }else {
                     Toast.makeText(this,"User does exist", Toast.LENGTH_SHORT).show();

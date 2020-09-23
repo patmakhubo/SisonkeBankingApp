@@ -1,7 +1,5 @@
 package com.sisonkebank.bankingapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +7,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Objects;
+import androidx.appcompat.app.AppCompatActivity;
 
 import Data.DatabaseHelper;
 import Model.User;
@@ -40,7 +38,7 @@ public class MainPageActivity extends AppCompatActivity implements View.OnClickL
 
     public void declareVariables() {
         Intent p = getIntent();
-        String email = Objects.requireNonNull(p.getExtras()).getString("email");
+        String email = p.getExtras().getString("email");
         welcome = findViewById(R.id.txtLoginWelcome);
         DatabaseHelper db = new DatabaseHelper(this);
         user = db.getUserDetails(email);
