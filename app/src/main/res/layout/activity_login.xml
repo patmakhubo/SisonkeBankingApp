@@ -31,8 +31,7 @@
             android:layout_marginTop="20dp"
             android:text="@string/sisonkeWelcomMessage"
             android:textColor="@color/colorPrimary"
-            android:textSize="25sp"
-            tools:ignore="HardcodedText" />
+            android:textAppearance="@android:style/TextAppearance.Large" />
 
         <EditText
             android:id="@+id/txtEmail"
@@ -78,6 +77,6 @@
             android:onClick="processRegistration"
             android:text="@string/txtRegisterHere"
             android:textColor="@android:color/background_dark"
-            android:textSize="20sp" />
+            android:textAppearance="@android:style/TextAppearance.Large" />
     </RelativeLayout>
 </RelativeLayout>

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Sisonke Banking App</string>
-    <string name="txtEmailAddress">Email</string>
-    <string name="password">Password</string>
+    <string name="txtEmailAddress">Email:</string>
+    <string name="password">Password: </string>
     <string name="txtRegisterHere">Don\'t have an account? Register here</string>
     <string name="RegisterHereTitle">Enter your details below to register</string>
     <string name="Name">Name: </string>
@@ -14,7 +14,7 @@
     <string name="generalLogoDescription">Company Logo</string>
     <string name="sisonkeWelcomMessage">Welcome to Sisonke Bank App</string>
     <string name="login">LOGIN</string>
-    <string name="Mobile">Mobile; </string>
+    <string name="Mobile">Mobile: </string>
     <string name="ViewAccountBalance">View Account Balance</string>
     <string name="TransferBetweenAccounts">Transfer Between Accounts</string>
     <string name="Logout">Logout</string>

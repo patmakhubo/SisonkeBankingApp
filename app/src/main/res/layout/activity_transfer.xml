@@ -11,6 +11,7 @@
         android:id="@+id/txtTransferTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAppearance="@android:style/TextAppearance.Large"
         android:layout_marginTop="32dp"
         android:text="@string/TransferTitle"
         android:textColor="@color/colorPrimary"

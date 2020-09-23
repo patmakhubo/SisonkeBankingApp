@@ -12,16 +12,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Objects;
 
 import Data.DatabaseHelper;
 import Model.User;
 
-import static java.lang.String.*;
+import static java.lang.String.format;
 
-public class AccountTransferActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class AccountTransferActivity extends MainPageActivity implements AdapterView.OnItemSelectedListener {
     private TextView current;
     private TextView savings;
     private EditText amount;
@@ -29,6 +28,7 @@ public class AccountTransferActivity extends AppCompatActivity implements Adapte
     private Spinner accountType;
     private User userinfo;
     private DatabaseHelper database;
+
     @SuppressLint({"SetTextI18n", "DefaultLocale"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -21,7 +21,7 @@ tools:ignore="UselessParent">
     android:layout_centerHorizontal="true"
     android:text="@string/RegisterHereTitle"
     android:textColor="@color/colorPrimary"
-    android:textSize="23sp" />
+    android:textAppearance="@android:style/TextAppearance.Large" />
 
 <EditText
     android:id="@+id/txtName"
@@ -137,15 +137,15 @@ tools:ignore="UselessParent">
     android:text="@string/CreateAccount"
     android:textColor="@android:color/background_light" />
 
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/btnCreateAccount"
-    android:layout_centerHorizontal="true"
-    android:layout_marginTop="20dp"
-    android:onClick="processLogin"
-    android:text="@string/txtLoginHere"
-    android:textColor="@android:color/background_dark"
-    android:textSize="20sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnCreateAccount"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:onClick="processLogin"
+        android:text="@string/txtLoginHere"
+        android:textColor="@android:color/background_dark"
+        android:textAppearance="@android:style/TextAppearance.Large" />
 </RelativeLayout>
     </RelativeLayout>
